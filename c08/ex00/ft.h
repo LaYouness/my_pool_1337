@@ -1,43 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylaarare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/08 20:19:47 by ylaarare          #+#    #+#             */
-/*   Updated: 2024/09/19 01:28:44 by ylaarare         ###   ########.fr       */
+/*   Created: 2024/09/16 18:27:35 by ylaarare          #+#    #+#             */
+/*   Updated: 2024/09/19 00:40:52 by ylaarare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
-{
-	int	i;
-	int	sign;
-
-	i = 0;
-	sign = 1;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-	{
-		str++;
-	}
-	while (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign *= -1;
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		i = (i * 10) + (*str - '0');
-		str++;
-	}
-	return (i * sign);
-}
-/*
-#include <stdio.h>
-int main()
-{
-printf("%d", ft_atoi("   ---1A23i"));
-}
-*/
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);

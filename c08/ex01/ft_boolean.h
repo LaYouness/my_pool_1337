@@ -1,43 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylaarare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/08 20:19:47 by ylaarare          #+#    #+#             */
-/*   Updated: 2024/09/19 01:28:44 by ylaarare         ###   ########.fr       */
+/*   Created: 2024/09/16 21:06:12 by ylaarare          #+#    #+#             */
+/*   Updated: 2024/09/19 00:24:56 by ylaarare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
-{
-	int	i;
-	int	sign;
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
-	i = 0;
-	sign = 1;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-	{
-		str++;
-	}
-	while (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign *= -1;
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		i = (i * 10) + (*str - '0');
-		str++;
-	}
-	return (i * sign);
-}
-/*
-#include <stdio.h>
-int main()
-{
-printf("%d", ft_atoi("   ---1A23i"));
-}
-*/
+# include <unistd.h>
+
+typedef int	t_bool;
+
+# define SUCCESS 0
+# define TRUE 1
+# define FALSE 0
+# define EVEN(nbr) (nbr % 2 == 0)
+# define EVEN_MSG "I have an even number of arguments.\n"
+# define ODD_MSG "I have an odd number of arguments.\n"
+
+#endif
